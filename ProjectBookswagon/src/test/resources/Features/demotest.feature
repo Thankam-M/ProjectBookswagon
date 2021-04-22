@@ -2,6 +2,7 @@ Feature: Bookswagon Functionality Check
 Background:
 Given User navigates to homepage
 Then Verify Bookswagon Logo displayed
+@tag1
 Scenario: Check add to cart functionality
 And verify cart has no items
 When user search for "birds"
