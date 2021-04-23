@@ -11,8 +11,10 @@ import org.openqa.selenium.support.ui.Select;
 public class searchresultspage {
 
 String selectsorting="Product_discount asc";
-By search_results_text =By.xpath("//*[@id=\"site-wrapper\"]/div[2]/div[3]/div[1]/div[1]/h1/span");
-By sort_option_on_the_page=By.xpath("//*[@id=\"site-wrapper\"]/div[2]/div[3]/div[2]/div[2]/div/div[2]");
+By search_results_text =By.xpath("//*[@id=\"site-wrapper\"]/div[3]/div[3]/div[1]/div[1]/h1");
+//By search_results_text =By.xpath("//*[@id=\"site-wrapper\"]/div[3]/div[3]/div[1]/div[1]/h1");
+By sort_option_on_the_page=By.xpath("//*[@id=\"site-wrapper\"]/div[3]/div[3]/div[2]/div[2]");
+//By sort_option_on_the_page=By.xpath("//*[@id=\"site-wrapper\"]/div[3]/div[3]/div[2]/div[2]");
 By sort_price=By.xpath("//*[@id=\"ddlSort\"]");
 By select_Low_to_high=By.xpath("//*[@value='Product_discount asc']");
 By select_category=By.xpath("//*[@id=\"ctl00_licategory\"]/a[1]");
@@ -40,11 +42,12 @@ public  searchresultspage(WebDriver driver)
  */
 
 public boolean verifysearchresults(String searchtext)
-{
-	System.out.println(driver.findElement(search_results_text).getText().trim());
+{System.out.println(driver.findElement(search_results_text).getText().trim());
 	boolean match=driver.findElement(search_results_text).getText().trim().replace("\"","" ).equals(searchtext);
+	//boolean match=true;
 	return match;
 }
+
 /**
  * This method is used to click the sort option
  * @author THANKAM

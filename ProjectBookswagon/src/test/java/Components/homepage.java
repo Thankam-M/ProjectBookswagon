@@ -74,8 +74,9 @@ public boolean verifycartcount(String expected_count)
  * This method is used to search the required book
  * @author THANKAM
  * @param prodName
+ * @throws InterruptedException 
  */
-public  void searchproduct(String prodName)  {
+public  void searchproduct(String prodName) {
 	driver.findElement(search_box).sendKeys(prodName);
 	driver.findElement(search_box).sendKeys(Keys.ENTER);
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

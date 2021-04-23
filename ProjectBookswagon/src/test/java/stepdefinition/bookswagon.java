@@ -74,10 +74,11 @@ public class bookswagon {
 	 * This method is used to search the particular type of book
 	 * @author THANKAM
 	 * @param string
+	 * @throws InterruptedException 
 	 */
 	
 	@When("user search for {string}")
-	public void user_search_for(String string){
+	public void user_search_for(String string) {
 	    
 		Homepage.searchproduct(string);
 	 }
@@ -91,8 +92,9 @@ public class bookswagon {
 	@Then("verify search results displayed for {string}")
 	public void verify_search_results_displayed_for(String string) {
 	   
-		searchpage=new searchresultspage(driver);
+	searchpage=new searchresultspage(driver);
 		boolean out=searchpage.verifysearchresults(string);
+
 		Assert.assertTrue(out);
 		
 	}
